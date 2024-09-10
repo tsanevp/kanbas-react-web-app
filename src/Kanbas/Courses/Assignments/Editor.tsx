@@ -1,13 +1,13 @@
 export default function AssignmentEditor() {
     return (
         <div id="wd-assignments-editor">
-            <label htmlFor="wd-name">Assignment Name</label>
+            <label htmlFor="wd-name"><b>Assignment Name</b></label>
             <br />
             <br />
             <input id="wd-name" value="A1 - ENV + HTML" />
             <br />
             <br />
-            <textarea id="wd-description">
+            <textarea id="wd-description" cols={45} rows={10}>
                 The assignment is available online Submit a link to the landing page of your web application running on Netlify. The landing page should include the following: Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code respositories The Kanbas application should incldue a link to navigate back to the landing page.
             </textarea>
             <br />
@@ -28,7 +28,7 @@ export default function AssignmentEditor() {
                     </td>
                     <td>
                         <select id="wd-group">
-                            <option value="Assignments">Assignments</option>
+                            <option value="Assignments">ASSIGNMENTS</option>
                         </select>
                     </td>
                 </tr>
@@ -98,24 +98,27 @@ export default function AssignmentEditor() {
                 </tr>
                 <br />
                 <tr>
-                    <td />
+                    <td colSpan={1}></td>
                     <td>
-                        <label htmlFor="wd-available-from">Available from</label>
-                        <br />
-                        <input type="date" id="wd-available-from" value="2024-05-06" />
-
-                    </td>
-                    <td>
-                        <label htmlFor="wd-available-until">Until</label>
-                        <br />
-                        <input type="date" id="wd-available-until" value="2024-05-20" />
+                        <td>
+                            <label htmlFor="wd-available-from">Available from</label>
+                            <br />
+                            <input type="date" id="wd-available-from" value="2024-05-06" />
+                        </td>
+                        <td>
+                            <label htmlFor="wd-available-until">Until</label>
+                            <br/>
+                            <input type="date" id="wd-available-until" value="2024-05-20" />
+                        </td>
                     </td>
                 </tr>
                 <br />
             </table>
             <hr />
-            <button id="wd-cancel">Cancel</button>
-            <button id="wd-save">Save</button>
+            <div style={{ textAlign: "right" }}>
+                <button id="wd-cancel">Cancel</button>
+                <button id="wd-save">Save</button>
+            </div>
         </div>
     );
 }
