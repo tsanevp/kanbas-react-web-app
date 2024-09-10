@@ -180,6 +180,7 @@ export default function Lab1() {
                     <label htmlFor="wd-text-fields-last-name">Last name:</label>
                     <input type="text" id="wd-text-fields-last-name" placeholder="Doe"
                         value="Wonderland" title="The last name" />
+
                     <h4>Other HTML field types</h4>
                     <label htmlFor="wd-text-fields-email"> Email: </label>
                     <input type="email"
@@ -204,6 +205,7 @@ export default function Lab1() {
                         id="wd-text-fields-dob"
                         value="2000-01-21" /><br />
                 </form>
+
                 <h5>Text boxes</h5>
                 <label>Biography:</label><br />
                 <textarea id="wd-textarea" cols={30} rows={10}>
@@ -261,9 +263,7 @@ export default function Lab1() {
                 </select>
 
                 <h4>Anchor tag</h4>
-                Please
-                <a id="wd-lipsum" href="https://www.lipsum.com">click here</a>
-                to get dummy text<br />
+                Please <a id="wd-lipsum" href="https://www.lipsum.com">click here</a> to get dummy text<br />
             </div>
 
         </div>
