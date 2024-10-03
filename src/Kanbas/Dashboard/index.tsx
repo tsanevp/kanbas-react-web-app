@@ -11,7 +11,7 @@ export default function Dashboard() {
                     <div className="wd-dashboard-course col" style={{ width: "262px" }}>
                         <div className="card rounded-2 overflow-hidden">
                             <Link className="wd-dashboard-course-link text-decoration-none text-dark" to="/Kanbas/Courses/1234/Home">
-                                <img src="./images/CSharpCourse.webp" width="100%" height={140} />
+                                <img src="./images/CSharpCourse.webp" width="100%" height={140} alt="c# course" />
                                 <div className="card-body">
                                     <h5 className="wd-dashboard-course-title card-title ellipsis">
                                         CS6240 21487 Parallel Data Processing SEC 02 Fall 2024
@@ -37,7 +37,7 @@ export default function Dashboard() {
                     <div className="wd-dashboard-course col" style={{ width: "262px" }}>
                         <div className="card rounded-2 overflow-hidden">
                             <Link className="wd-dashboard-course-link text-decoration-none text-dark" to="/Kanbas/Courses/1234/Home">
-                                <img src="./images/AWSCourse.png" width="100%" height={140} />
+                                <img src="./images/AWSCourse.png" width="100%" height={140} alt="aws course" />
                                 <div className="card-body">
                                     <h5 className="wd-dashboard-course-title card-title ellipsis">
                                         CS5001 AWS 101
@@ -63,7 +63,7 @@ export default function Dashboard() {
                     <div className="wd-dashboard-course col" style={{ width: "262px" }}>
                         <div className="card rounded-2 overflow-hidden">
                             <Link className="wd-dashboard-course-link text-decoration-none text-dark" to="/Kanbas/Courses/1234/Home">
-                                <img src="./images/CSharpCourse.webp" width="100%" height={140} />
+                                <img src="./images/CSharpCourse.webp" width="100%" height={140} alt="c# course" />
                                 <div className="card-body">
                                     <h5 className="wd-dashboard-course-title card-title ellipsis">
                                         CS5002 C# 101
@@ -89,7 +89,7 @@ export default function Dashboard() {
                     <div className="wd-dashboard-course col" style={{ width: "262px" }}>
                         <div className="card rounded-2 overflow-hidden">
                             <Link className="wd-dashboard-course-link text-decoration-none text-dark" to="/Kanbas/Courses/1234/Home">
-                                <img src="./images/GoCourse.png" width="100%" height={140} />
+                                <img src="./images/GoCourse.png" width="100%" height={140} alt="go course" />
                                 <div className="card-body">
                                     <h5 className="wd-dashboard-course-title card-title ellipsis">
                                         CS5003 GoLang 101
@@ -115,7 +115,7 @@ export default function Dashboard() {
                     <div className="wd-dashboard-course col" style={{ width: "262px" }}>
                         <div className="card rounded-2 overflow-hidden">
                             <Link className="wd-dashboard-course-link text-decoration-none text-dark" to="/Kanbas/Courses/1234/Home">
-                                <img src="./images/NodeJsCourse.png" width="100%" height={140} />
+                                <img src="./images/NodeJsCourse.png" width="100%" height={140} alt="node js course" />
                                 <div className="card-body">
                                     <h5 className="wd-dashboard-course-title card-title ellipsis">
                                         CS5004 NodeJs 101
@@ -141,7 +141,7 @@ export default function Dashboard() {
                     <div className="wd-dashboard-course col" style={{ width: "262px" }}>
                         <div className="card rounded-2 overflow-hidden">
                             <Link className="wd-dashboard-course-link text-decoration-none text-dark" to="/Kanbas/Courses/1234/Home">
-                                <img src="./images/PythonCourse.png" width="100%" height={140} />
+                                <img src="./images/PythonCourse.png" width="100%" height={140} alt="python course" />
                                 <div className="card-body">
                                     <h5 className="wd-dashboard-course-title card-title ellipsis">
                                         CS5005 Python 101
@@ -167,7 +167,7 @@ export default function Dashboard() {
                     <div className="wd-dashboard-course col" style={{ width: "262px" }}>
                         <div className="card rounded-2 overflow-hidden">
                             <Link className="wd-dashboard-course-link text-decoration-none text-dark" to="/Kanbas/Courses/1234/Home">
-                                <img src="./images/ReactCourse.png" width="100%" height={140} />
+                                <img src="./images/ReactCourse.png" width="100%" height={140} alt="react course" />
                                 <div className="card-body">
                                     <h5 className="wd-dashboard-course-title card-title ellipsis">
                                         CS5006 React JS 101
@@ -193,7 +193,7 @@ export default function Dashboard() {
                     <div className="wd-dashboard-course col" style={{ width: "262px" }}>
                         <div className="card rounded-2 overflow-hidden">
                             <Link className="wd-dashboard-course-link text-decoration-none text-dark" to="/Kanbas/Courses/1234/Home">
-                                <img src="./images/VSCodeCourse.png" width="100%" height={140} />
+                                <img src="./images/VSCodeCourse.png" width="100%" height={140} alt="vs code course" />
                                 <div className="card-body">
                                     <h5 className="wd-dashboard-course-title card-title ellipsis">
                                         CS5007 VS Code 101

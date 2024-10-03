@@ -1,5 +1,7 @@
 import { FaPlus } from "react-icons/fa6";
 import GreenCheckmark from "./GreenCheckmark";
+import { CiNoWaitingSign } from "react-icons/ci";
+
 export default function ModulesControls() {
     return (
         <div id="wd-modules-controls" className="text-nowrap">
@@ -14,26 +16,26 @@ export default function ModulesControls() {
                 </button>
                 <ul className="dropdown-menu">
                     <li>
-                        <a id="wd-publish-all-modules-and-items-btn" className="dropdown-item" href="#">
+                        <a id="wd-publish-all-modules-and-items-btn" className="dropdown-item" href="/">
                             <GreenCheckmark />
                             Publish all modules and items
                         </a>
                     </li>
                     <li>
-                        <a id="wd-publish-modules-only-button" className="dropdown-item" href="#">
+                        <a id="wd-publish-modules-only-button" className="dropdown-item" href="/">
                             <GreenCheckmark />
                             Publish modules only
                         </a>
                     </li>
                     <li>
-                        <a id="wd-unpublish-all-modules-and-items" className="dropdown-item" href="#">
-                            <GreenCheckmark />
+                        <a id="wd-unpublish-all-modules-and-items" className="dropdown-item" href="/">
+                            <CiNoWaitingSign className="fs-5" />
                             Unpublish all modules and items
                         </a>
                     </li>
                     <li>
-                        <a id="wd-unpublish-modules-only" className="dropdown-item" href="#">
-                            <GreenCheckmark />
+                        <a id="wd-unpublish-modules-only" className="dropdown-item" href="/">
+                            <CiNoWaitingSign className="fs-5" />
                             Unpublish modules only
                         </a>
                     </li>

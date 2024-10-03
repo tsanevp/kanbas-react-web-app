@@ -70,3 +70,13 @@ body * {
     text-decoration: none;
     color: inherit;
 }
+
+.edit-container {
+    border: 1px solid #c7cdd1;
+    border-radius: 8px;
+    padding: 10px 10px;
+}
+
+.edit-labels {
+    font-weight: bold;
+}

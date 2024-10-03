@@ -47,31 +47,33 @@ export default function AssignmentEditor() {
                 {/* Submission Type */}
                 <div className="mb-3 row">
                     <label htmlFor="wd-submission-type" className="col-3 col-form-label text-end">Submission Type</label>
-                    <div className="col-9">
+                    <div className="col-9 edit-container">
                         <select id="wd-submission-type" className="form-select">
                             <option value="SubmissionType">Online</option>
                         </select>
 
                         {/* Online Entry Options */}
                         <div className="mb-3">
-                            <label><b>Online Entry Options</b></label>
-                            <div className="form-check">
+                            <label className="mt-3 edit-labels">
+                                Online Entry Options
+                            </label>
+                            <div className="form-check mt-3">
                                 <input className="form-check-input" type="checkbox" id="wd-text-entry" />
                                 <label className="form-check-label" htmlFor="wd-text-entry">Text Entry</label>
                             </div>
-                            <div className="form-check">
+                            <div className="form-check mt-3">
                                 <input className="form-check-input" type="checkbox" id="wd-website-url" />
                                 <label className="form-check-label" htmlFor="wd-website-url">Website URL</label>
                             </div>
-                            <div className="form-check">
+                            <div className="form-check mt-3">
                                 <input className="form-check-input" type="checkbox" id="wd-media-recordings" />
                                 <label className="form-check-label" htmlFor="wd-media-recordings">Media Recordings</label>
                             </div>
-                            <div className="form-check">
+                            <div className="form-check mt-3">
                                 <input className="form-check-input" type="checkbox" id="wd-student-annotation" />
                                 <label className="form-check-label" htmlFor="wd-student-annotation">Student Annotation</label>
                             </div>
-                            <div className="form-check">
+                            <div className="form-check mt-3">
                                 <input className="form-check-input" type="checkbox" id="wd-file-upload" />
                                 <label className="form-check-label" htmlFor="wd-file-upload">File Upload</label>
                             </div>
@@ -82,25 +84,29 @@ export default function AssignmentEditor() {
                 {/* Assign To */}
                 <div className="mb-3 row">
                     <label htmlFor="wd-assign-to" className="col-3 col-form-label text-end">Assign</label>
-                    <div className="col-9">
-                        <label htmlFor="wd-assign-to" className="form-label">Assign To</label>
-                        <input id="wd-assign-to" className="form-control" value="Everyone" />
+                    <div className="col-9 edit-container">
+                        <div className="mb-3">
+                            <label htmlFor="wd-assign-to" className="edit-labels">Assign To</label>
+                            <input id="wd-assign-to" className="form-control" value="Everyone" />
+                        </div>
 
                         {/* Due Date */}
                         <div className="mb-3">
-                            <label htmlFor="wd-due-date" className="form-label">Due Date</label>
-                            <input type="date" id="wd-due-date" className="form-control" value="2024-05-13" />
+                            <label htmlFor="wd-due-date" className="edit-labels">Due Date</label>
+                            <input type="datetime-local" id="wd-due-date" className="form-control" value="2024-05-13 23:59" />
                         </div>
 
                         {/* Available From and Until */}
-                        <div className="mb-3">
-                            <label htmlFor="wd-available-from" className="form-label">Available From</label>
-                            <input type="date" id="wd-available-from" className="form-control" value="2024-05-06" />
-                        </div>
+                        <div className="row d-flex align-items-start">
+                            <div className="mb-3 col-6 mt-0">
+                                <label htmlFor="wd-available-from" className="edit-labels">Available From</label>
+                                <input type="datetime-local" id="wd-available-from" className="form-control" value="2024-05-13 23:59" />
+                            </div>
 
-                        <div className="mb-3">
-                            <label htmlFor="wd-available-until" className="form-label">Until</label>
-                            <input type="date" id="wd-available-until" className="form-control" value="2024-05-20" />
+                            <div className="mb-3 col-6 mt-0">
+                                <label htmlFor="wd-available-until" className="edit-labels">Until</label>
+                                <input type="datetime-local" id="wd-available-until" className="form-control" value="2024-05-13 23:59" />
+                            </div>
                         </div>
                     </div>
                 </div>
