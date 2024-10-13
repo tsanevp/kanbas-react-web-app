@@ -1,13 +1,16 @@
-
+import { useParams } from "react-router";
 import AssignmentRightControls from "./AssignmentRightControls";
 import AssignmentLeftControls from "./AssignmentLeftControls";
 import AssignmentControls from "./AssignmentControls";
 import { BsGripVertical } from 'react-icons/bs';
-import { IoEllipsisVertical } from "react-icons/io5";
+import { IoEllipsisVertical, IoCaretDownSharp } from "react-icons/io5";
 import { FaPlus } from "react-icons/fa6";
-import { IoCaretDownSharp } from "react-icons/io5";
+import * as db from "../../Database"
 
 export default function Assignments() {
+    const { cid } = useParams();
+    const assignments = db.assignments;
+
     return (
         <div id="wd-assignments">
             <AssignmentControls /><br /><br />
@@ -26,65 +29,46 @@ export default function Assignments() {
                         </div>
                     </div>
                     <ul className="wd-lessons list-group rounded-0">
-                        <li className="wd-lesson list-group-item p-3 ps-1 d-flex justify-content-between align-items-center">
-                            <div className="assignment-left-controls me-3">
-                                <AssignmentLeftControls />
-                            </div>
-
-                            <div className="flex-grow-1">
-                                <a className="wd-assignment-link fw-bold"
-                                    href="#/Kanbas/Courses/1234/Assignments/123">
-                                    A1
-                                </a>
-                                <div className="text-muted">
-                                    <span style={{ color: "red" }}>Multiple Modules</span> | <b>Not available until</b> May 6 at 12:00am | <b>Due</b> May 13 at 11:59pm | 100 pts
+                        {assignments.filter((assignment: any) => assignment.course === cid).map((assignment: any) => (
+                            <li key={assignment._id} className="wd-lesson list-group-item p-3 ps-1 d-flex justify-content-between align-items-center">
+                                <div className="assignment-left-controls me-3">
+                                    <AssignmentLeftControls />
                                 </div>
-                            </div>
 
-                            <div className="assignment-control-buttons ms-3">
-                                <AssignmentRightControls />
-                            </div>
-                        </li>
-                        <li className="wd-lesson list-group-item p-3 ps-1 d-flex justify-content-between align-items-center">
-                            <div className="assignment-left-controls me-3">
-                                <AssignmentLeftControls />
-                            </div>
-
-                            <div className="flex-grow-1">
-                                <a className="wd-assignment-link fw-bold"
-                                    href="#/Kanbas/Courses/1234/Assignments/123">
-                                    A2
-                                </a>
-                                <div className="text-muted">
-                                    <span style={{ color: "red" }}>Multiple Modules</span> | <b>Not available until</b> May 13 at 12:00am | <b>Due</b> May 20 at 11:59pm | 100 pts
+                                <div className="flex-grow-1">
+                                    <a className="wd-assignment-link fw-bold"
+                                        href={`#/Kanbas/Courses/${cid}/Assignments/${assignment._id}`}>
+                                        {assignment.title}
+                                    </a>
+                                    <div className="text-muted">
+                                        <span style={{ color: "red" }}>Multiple Modules</span> | <b>Not available until</b> {formatDate(assignment.availableFrom)} | <b>Due</b> {formatDate(assignment.dueDate)} | {assignment.points} pts
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div className="assignment-control-buttons ms-3">
-                                <AssignmentRightControls />
-                            </div>
-                        </li>
-                        <li className="wd-lesson list-group-item p-3 ps-1 d-flex justify-content-between align-items-center">
-                            <div className="assignment-left-controls me-3">
-                                <AssignmentLeftControls />
-                            </div>
-
-                            <div className="flex-grow-1">
-                                <a className="wd-assignment-link fw-bold"
-                                    href="#/Kanbas/Courses/1234/Assignments/123">
-                                    A3
-                                </a>
-                                <div className="text-muted">
-                                    <span style={{ color: "red" }}>Multiple Modules</span> | <b>Not available until</b> May 20 at 12:00am | <b>Due</b> May 27 at 11:59pm | 100 pts
+                                <div className="assignment-control-buttons ms-3">
+                                    <AssignmentRightControls />
                                 </div>
-                            </div>
-                            <div className="assignment-control-buttons ms-3">
-                                <AssignmentRightControls />
-                            </div>
-                        </li>
+                            </li>
+                        ))}
                     </ul>
                 </li>
             </ul>
         </div>
     );
+}
+
+function formatDate(isoDate: string): string {
+    const date = new Date(isoDate);
+
+    // Options for formatting the date
+    const options: Intl.DateTimeFormatOptions = {
+        month: 'long',  // Full month name ("long" is correct here)
+        day: 'numeric', // Numeric day (e.g., "30")
+        hour: 'numeric', // Numeric hour (e.g., "11")
+        minute: '2-digit', // Two-digit minutes (e.g., "59")
+        hour12: true // Use 12-hour format with AM/PM
+    };
+
+    // Format the date to: Month Day at Hour:Minute AM/PM
+    return date.toLocaleString('en-US', options).replace(',', ' at');
 }
