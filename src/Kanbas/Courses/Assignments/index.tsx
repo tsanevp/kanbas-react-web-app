@@ -6,10 +6,12 @@ import { BsGripVertical } from 'react-icons/bs';
 import { IoEllipsisVertical, IoCaretDownSharp } from "react-icons/io5";
 import { FaPlus } from "react-icons/fa6";
 import * as db from "../../Database"
+import { useSelector } from "react-redux";
 
 export default function Assignments() {
     const { cid } = useParams();
     const assignments = db.assignments;
+    const { currentUser } = useSelector((state: any) => state.accountReducer);
 
     return (
         <div id="wd-assignments">
@@ -24,8 +26,12 @@ export default function Assignments() {
                             <span className="grade-percent mx-1">
                                 40% of Total
                             </span>
-                            <FaPlus className="mx-1" />
-                            <IoEllipsisVertical className="mx-1" />
+                            {currentUser.role === "FACULTY" && (
+                                <>
+                                    <FaPlus className="mx-1" />
+                                    <IoEllipsisVertical className="mx-1" />
+                                </>
+                            )}
                         </div>
                     </div>
                     <ul className="wd-lessons list-group rounded-0">
@@ -36,18 +42,25 @@ export default function Assignments() {
                                 </div>
 
                                 <div className="flex-grow-1">
-                                    <a className="wd-assignment-link fw-bold"
-                                        href={`#/Kanbas/Courses/${cid}/Assignments/${assignment._id}`}>
-                                        {assignment.title}
-                                    </a>
+                                    {currentUser.role === "FACULTY" ?
+                                        (
+                                            <a className="wd-assignment-link fw-bold"
+                                                href={`#/Kanbas/Courses/${cid}/Assignments/${assignment._id}`}>
+                                                {assignment.title}
+                                            </a>
+                                        ) : <span className="fw-bold">{assignment.title}</span>
+                                    }
+
                                     <div className="text-muted">
                                         <span style={{ color: "red" }}>Multiple Modules</span> | <b>Not available until</b> {formatDate(assignment.availableFrom)} | <b>Due</b> {formatDate(assignment.dueDate)} | {assignment.points} pts
                                     </div>
                                 </div>
 
-                                <div className="assignment-control-buttons ms-3">
-                                    <AssignmentRightControls />
-                                </div>
+                                {currentUser.role === "FACULTY" && (
+                                    <div className="assignment-control-buttons ms-3">
+                                        <AssignmentRightControls />
+                                    </div>
+                                )}
                             </li>
                         ))}
                     </ul>

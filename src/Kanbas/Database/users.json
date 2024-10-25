@@ -1,12 +1,12 @@
 [
     {
         "_id": "123",
-        "username": "iron_man",
-        "password": "stark123",
+        "username": "test",
+        "password": "test",
         "firstName": "Tony",
         "lastName": "Stark",
         "email": "tony@stark.com",
-        "dob": "1970-05-29T00:00:00.000Z",
+        "dob": "1972-02-19",
         "role": "FACULTY",
         "loginId": "001234561S",
         "section": "S101",

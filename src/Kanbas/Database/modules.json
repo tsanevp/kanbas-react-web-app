@@ -226,7 +226,7 @@
     ]
   },
   {
-    "_id": "M501",
+    "_id": "M511",
     "name": "Inorganic Chemistry Basics",
     "description": "Fundamentals of inorganic chemistry and coordination compounds.",
     "course": "RS105",
@@ -235,7 +235,7 @@
         "_id": "L501",
         "name": "Coordination Chemistry",
         "description": "Understanding the properties and reactivity of metal complexes.",
-        "module": "M501"
+        "module": "M511"
       }
     ]
   },
@@ -308,7 +308,7 @@
     ]
   },
   {
-    "_id": "M101",
+    "_id": "M111",
     "name": "Diplomacy in Middle-earth",
     "description": "Exploring the diplomatic interactions between different races in Middle-earth.",
     "course": "RS108",
@@ -317,18 +317,18 @@
         "_id": "L101",
         "name": "Council of Elrond",
         "description": "A detailed study of the Council of Elrond as a key diplomatic event.",
-        "module": "M101"
+        "module": "M111"
       },
       {
         "_id": "L102",
         "name": "The War of the Ring",
         "description": "Understanding the role of diplomacy and leadership during the War of the Ring.",
-        "module": "M101"
+        "module": "M111"
       }
     ]
   },
   {
-    "_id": "M102",
+    "_id": "M112",
     "name": "Historical Alliances and Conflicts",
     "description": "Analyzing key alliances and conflicts between Men, Elves, Dwarves, and Wizards.",
     "course": "RS108",
@@ -337,18 +337,18 @@
         "_id": "L103",
         "name": "The Last Alliance",
         "description": "Exploring the Last Alliance of Men and Elves against Sauron.",
-        "module": "M102"
+        "module": "M112"
       },
       {
         "_id": "L104",
         "name": "The Fall of Númenor",
         "description": "Examining the collapse of Númenor and its impact on diplomacy in Middle-earth.",
-        "module": "M102"
+        "module": "M112"
       }
     ]
   },
   {
-    "_id": "M201",
+    "_id": "M212",
     "name": "Sources of Magic in Middle-earth",
     "description": "Understanding the origins and nature of magic in Middle-earth.",
     "course": "RS109",
@@ -357,18 +357,18 @@
         "_id": "L201",
         "name": "The Rings of Power",
         "description": "Studying the creation and influence of the Rings of Power.",
-        "module": "M201"
+        "module": "M212"
       },
       {
         "_id": "L202",
         "name": "The Palantíri",
         "description": "The role and significance of the Palantíri in Middle-earth.",
-        "module": "M201"
+        "module": "M212"
       }
     ]
   },
   {
-    "_id": "M202",
+    "_id": "M213",
     "name": "Practitioners of Magic",
     "description": "Examining the key magical beings in Middle-earth and their powers.",
     "course": "RS109",
@@ -377,13 +377,13 @@
         "_id": "L203",
         "name": "Wizards and Istari",
         "description": "The origins and roles of the Wizards in Middle-earth.",
-        "module": "M202"
+        "module": "M213"
       },
       {
         "_id": "L204",
         "name": "Elves and their Magic",
         "description": "Exploring the unique magical abilities of Elves.",
-        "module": "M202"
+        "module": "M213"
       }
     ]
   },
@@ -408,7 +408,7 @@
     ]
   },
   {
-    "_id": "M401",
+    "_id": "M411",
     "name": "Philosophy of Liberation",
     "description": "An analysis of the philosophies underpinning independence movements.",
     "course": "RS111",
@@ -417,13 +417,13 @@
         "_id": "L401",
         "name": "Simón Bolívar's Contributions",
         "description": "Exploring the role of Simón Bolívar in the fight for independence.",
-        "module": "M401"
+        "module": "M411"
       },
       {
         "_id": "L402",
         "name": "Enlightenment Thought",
         "description": "The impact of Enlightenment ideas on independence movements.",
-        "module": "M401"
+        "module": "M411"
       }
     ]
   },
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "_id": "M601",
+    "_id": "M611",
     "name": "Foundations of Christian Ethics",
     "description": "A comprehensive overview of Christian ethical principles.",
     "course": "RS113",
@@ -457,18 +457,18 @@
         "_id": "L601",
         "name": "Virtues and Vices in Christianity",
         "description": "Understanding virtues and vices from a Christian ethical perspective.",
-        "module": "M601"
+        "module": "M611"
       },
       {
         "_id": "L602",
         "name": "Moral Decision-Making",
         "description": "Examining how moral decisions are made in Christian ethics.",
-        "module": "M601"
+        "module": "M611"
       }
     ]
   },
   {
-    "_id": "M701",
+    "_id": "M711",
     "name": "Early Christianity",
     "description": "Exploring the development of early Christian communities and the Apostolic Age.",
     "course": "RS114",
@@ -477,13 +477,13 @@
         "_id": "L701",
         "name": "The Apostolic Era",
         "description": "Understanding the spread of Christianity and the role of the Apostles.",
-        "module": "M701"
+        "module": "M711"
       },
       {
         "_id": "L702",
         "name": "Formation of Key Doctrines",
         "description": "Examining the early formation of Christian doctrines.",
-        "module": "M701"
+        "module": "M711"
       }
     ]
   },
