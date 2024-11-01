@@ -15,7 +15,7 @@ export default function AssignmentControls() {
                     <Link
                         id="wd-add-assignment"
                         className="btn btn-lg btn-danger me-1 float-end"
-                        to={`/Kanbas/Courses/${cid}/Assignments/${new Date().getTime().toString()}`}
+                        to={`/Kanbas/Courses/${cid}/Assignments/AddNewAssignment`}
                     >
                         <FaPlus className="position-relative me-2" style={{ bottom: "1px" }} />
                         Assignment

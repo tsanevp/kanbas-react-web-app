@@ -1,4 +1,3 @@
-import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addTodo, updateTodo, setTodo } from "./todosReducer";
 
@@ -23,7 +22,7 @@ export default function TodoForm() {
             </button>
             <input
                 className="form-control w-50"
-                defaultValue={todo.title}
+                value={todo.title}
                 onChange={(e) => dispatch(setTodo({ ...todo, title: e.target.value }))} 
             />
         </li>

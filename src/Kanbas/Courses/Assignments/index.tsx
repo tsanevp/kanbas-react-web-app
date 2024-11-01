@@ -5,13 +5,14 @@ import AssignmentControls from "./AssignmentControls";
 import { BsGripVertical } from 'react-icons/bs';
 import { IoEllipsisVertical, IoCaretDownSharp } from "react-icons/io5";
 import { FaPlus } from "react-icons/fa6";
-import * as db from "../../Database"
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteAssignments, editAssignments } from "./reducer";
 
 export default function Assignments() {
     const { cid } = useParams();
-    const assignments = db.assignments;
+    const dispatch = useDispatch();
     const { currentUser } = useSelector((state: any) => state.accountReducer);
+    const { assignments } = useSelector((state: any) => state.assignmentsReducer);
 
     return (
         <div id="wd-assignments">
@@ -45,6 +46,7 @@ export default function Assignments() {
                                     {currentUser.role === "FACULTY" ?
                                         (
                                             <a className="wd-assignment-link fw-bold"
+                                                onClick={() => { dispatch(editAssignments(assignment._id)) }}
                                                 href={`#/Kanbas/Courses/${cid}/Assignments/${assignment._id}`}>
                                                 {assignment.title}
                                             </a>
@@ -58,7 +60,10 @@ export default function Assignments() {
 
                                 {currentUser.role === "FACULTY" && (
                                     <div className="assignment-control-buttons ms-3">
-                                        <AssignmentRightControls />
+                                        <AssignmentRightControls
+                                            assignmentId={assignment._id}
+                                            deleteAssignments={(assignmentId) => { dispatch(deleteAssignments(assignmentId)) }}
+                                        />
                                     </div>
                                 )}
                             </li>
