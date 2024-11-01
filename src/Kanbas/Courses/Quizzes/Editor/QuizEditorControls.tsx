@@ -1,4 +1,3 @@
-import { FaPlus } from "react-icons/fa6";
 import { IoEllipsisVertical } from "react-icons/io5";
 
 export default function QuizEditorControls() {
