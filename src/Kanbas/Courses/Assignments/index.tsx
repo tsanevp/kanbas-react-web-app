@@ -6,7 +6,10 @@ import { BsGripVertical } from 'react-icons/bs';
 import { IoEllipsisVertical, IoCaretDownSharp } from "react-icons/io5";
 import { FaPlus } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteAssignments, editAssignments } from "./reducer";
+import { deleteAssignments, editAssignments, setAssignments } from "./reducer";
+import { useEffect } from "react";
+import * as coursesClient from "../client";
+import * as assignmentClient from "./client";
 
 export default function Assignments() {
     const { cid } = useParams();
@@ -14,6 +17,19 @@ export default function Assignments() {
     const { currentUser } = useSelector((state: any) => state.accountReducer);
     const { assignments } = useSelector((state: any) => state.assignmentsReducer);
 
+    const removeAssignment = async (assignmentId: string) => {
+        await assignmentClient.deleteAssignment(assignmentId);
+        dispatch(deleteAssignments(assignmentId));
+    };
+
+    const fetchAssignments = async () => {
+        const assignments = await coursesClient.findAssignmentsForCourse(cid as string);
+        dispatch(setAssignments(assignments));
+    };
+
+    useEffect(() => {
+        fetchAssignments();
+    }, []);
     return (
         <div id="wd-assignments">
             <AssignmentControls /><br /><br />
@@ -62,7 +78,7 @@ export default function Assignments() {
                                     <div className="assignment-control-buttons ms-3">
                                         <AssignmentRightControls
                                             assignmentId={assignment._id}
-                                            deleteAssignments={(assignmentId) => { dispatch(deleteAssignments(assignmentId)) }}
+                                            deleteAssignments={(assignmentId) => { removeAssignment(assignmentId) }}
                                         />
                                     </div>
                                 )}

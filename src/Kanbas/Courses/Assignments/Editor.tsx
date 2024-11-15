@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { addAssignments, updateAssignments } from "./reducer";
+import * as coursesClient from "../client";
+import * as assignmentClient from "./client";
 
 export default function AssignmentEditor() {
     const navigate = useNavigate();
@@ -31,6 +33,17 @@ export default function AssignmentEditor() {
         availableUntil: "",
         editing: false
     });
+
+    const createAssignmentForCourse = async () => {
+        if (!cid) return;
+        const newAssignment = await coursesClient.createAssignmentsForCourse(cid, assignment);
+        dispatch(addAssignments(newAssignment));
+    };
+
+    const saveAssignment = async () => {
+        await assignmentClient.updateAssignment({ ...assignment, editing: false });
+        dispatch(updateAssignments(assignment));
+    };
 
     useEffect(() => {
         if (aid !== "AddNewAssignment") {
@@ -232,7 +245,7 @@ export default function AssignmentEditor() {
                     </Link>
                     <button id="wd-save" className="btn btn-danger me-2" onClick={(e: any) => {
                         e.preventDefault();
-                        !assignment.editing ? dispatch(addAssignments(assignment)) : dispatch(updateAssignments({ ...assignment, editing: false }));
+                        !assignment.editing ? createAssignmentForCourse() : saveAssignment();
                         navigate(`/Kanbas/Courses/${cid}/Assignments`);
                     }}
                     >
