@@ -1,10 +1,24 @@
 import { FaUserCircle } from "react-icons/fa";
 import { useParams } from "react-router-dom";
-import * as db from "../../Database";
+import * as enrollmentClient from "../Enrollments/client";
+import { useEffect, useState } from "react";
 
 export default function PeopleTable() {
     const { cid } = useParams();
-    const { users, enrollments } = db;
+
+    const [enrollments, setEnrollments] = useState<any[]>([]);
+    const fetchEnrollments = async () => {
+        let enrollments = [];
+        try {
+            enrollments = await enrollmentClient.getAllEnrollmentsForCourse(cid);
+        } catch (error) {
+            console.error(error);
+        }
+        setEnrollments(enrollments);
+    };
+    useEffect(() => {
+        fetchEnrollments();
+    });
 
     return (
         <div id="wd-people-table">
@@ -20,10 +34,7 @@ export default function PeopleTable() {
                     </tr>
                 </thead>
                 <tbody>
-                    {users
-                        .filter((usr) =>
-                            enrollments.some((enrollment) => enrollment.user === usr._id && enrollment.course === cid)
-                        )
+                    {enrollments
                         .map((user: any) => (
                             <tr key={user._id}>
                                 <td className="wd-full-name text-nowrap">

@@ -71,6 +71,11 @@ body * {
     color: inherit;
 }
 
+.wd-quiz-link {
+    text-decoration: none;
+    color: inherit;
+}
+
 .edit-container {
     border: 1px solid #c7cdd1;
     border-radius: 8px;

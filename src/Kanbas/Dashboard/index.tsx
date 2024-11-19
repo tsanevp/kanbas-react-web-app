@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./styles.css"
 import { useEffect, useState } from "react";
 import * as courseClient from "../Courses/client";
-import * as enrollmentClient from "../Enrollments/client";
+import * as enrollmentClient from "../Courses/Enrollments/client";
 
 
 export default function Dashboard({

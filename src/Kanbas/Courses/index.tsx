@@ -9,7 +9,7 @@ import Quizzes from "./Quizzes";
 import { FaAlignJustify } from "react-icons/fa";
 import PeopleTable from "./People/Table";
 
-export default function Courses({ courses }: { courses: any[]; }) {
+export default function Courses({ courses }: Readonly<{ courses: any[]; }>) {
     const { cid } = useParams();
     const course = courses.find((course) => course._id === cid);
     const { pathname } = useLocation();
@@ -18,7 +18,7 @@ export default function Courses({ courses }: { courses: any[]; }) {
         <div id="wd-courses">
             <h2 className="text-danger">
                 <FaAlignJustify className="me-4 fs-4 mb-1" />
-                {course && course.name} &gt; {pathname.split('/')[4]}
+                {course?.name} &gt; {pathname.split('/')[4]}
             </h2>
             <hr />
             <div className="d-flex">
@@ -33,7 +33,7 @@ export default function Courses({ courses }: { courses: any[]; }) {
                         <Route path="Assignments" element={<Assignments />} />
                         <Route path="Quizzes" element={<Quizzes />} />
                         <Route path="Assignments/:aid" element={<AssignmentEditor />} />                        
-                        <Route path="Quizzes/:aid" element={<QuizEditor />} />
+                        <Route path="Quizzes/:qid" element={<QuizEditor />} />
                         <Route path="People" element={<PeopleTable />} />
                     </Routes>
                 </div>

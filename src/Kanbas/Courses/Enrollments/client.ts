@@ -13,3 +13,8 @@ export const createEnrollment = async (courseId: any) => {
     const { data } = await axiosWithCredentials.post(`${ENROLLMENT_API}/${courseId}`);
     return data;
 };
+
+export const getAllEnrollmentsForCourse = async (courseId: any) => {
+    const { data } = await axiosWithCredentials.get(`${ENROLLMENT_API}/${courseId}`);
+    return data;
+};
