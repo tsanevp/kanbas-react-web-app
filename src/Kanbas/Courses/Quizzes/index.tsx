@@ -6,7 +6,7 @@ import QuizLeftControls from "./QuizLeftControls";
 import QuizControls from "./QuizControls";
 import { IoCaretDownSharp } from "react-icons/io5";
 import * as quizClient from "./client";
-import { editQuizzes, setQuizzes } from "./reducer";
+import { deleteQuizzes, editQuizzes, setQuizzes } from "./reducer";
 
 export default function Quizzes() {
     const { cid } = useParams();
@@ -14,6 +14,11 @@ export default function Quizzes() {
     const { currentUser } = useSelector((state: any) => state.accountReducer);
     const { quizzes } = useSelector((state: any) => state.quizReducer);
 
+    const removeQuiz = async (quizId: string) => {
+        await quizClient.deleteQuiz(quizId);
+        dispatch(deleteQuizzes(quizId));
+    };
+    
     const fetchQuizzes = async () => {
         const quizzes = await quizClient.getQuizzesForCourse(cid as string);
         dispatch(setQuizzes(quizzes));
@@ -22,6 +27,7 @@ export default function Quizzes() {
     useEffect(() => {
         fetchQuizzes();
     }, []);
+
     return (
         <div id="wd-quizzes">
             <QuizControls />
@@ -33,7 +39,7 @@ export default function Quizzes() {
                         Assignment Quizzes
                     </div>
                     <ul className="wd-lessons list-group rounded-0">
-                        {quizzes.filter((quiz: any) => quiz.course === cid && quiz.published).map((quiz: any) => (
+                        {quizzes.filter((quiz: any) => currentUser.role !== "FACULTY" ? quiz.published: true).map((quiz: any) => (
                             <li key={quiz._id} className="wd-lesson list-group-item p-3 ps-1 d-flex justify-content-between align-items-center">
                                 <div className="quiz-left-controls me-3">
                                     <QuizLeftControls />
@@ -56,9 +62,15 @@ export default function Quizzes() {
                                     </div>
                                 </div>
 
-                                <div className="quiz-control-buttons ms-3">
-                                    <AssignmentRightControls />
-                                </div>
+                                {currentUser.role === "FACULTY" && (
+                                    <div className="quiz-control-buttons ms-3">
+                                        <AssignmentRightControls 
+                                            quizId={quiz._id}
+                                            deleteQuizzes={(quizId) => { removeQuiz(quizId) }}
+                                        />
+                                    </div>
+                                )}
+                                
                             </li>
                         ))}
                     </ul>

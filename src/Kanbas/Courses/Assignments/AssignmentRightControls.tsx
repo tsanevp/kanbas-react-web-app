@@ -4,10 +4,10 @@ import { FaTrash } from "react-icons/fa";
 import DeleteConfirmationModule from "./DeleteConfirmationModule";
 
 export default function AssignmentRightControls({ assignmentId, deleteAssignments }:
-    {
+    Readonly<{
         assignmentId: string;
         deleteAssignments: (assignmentId: string) => void;
-    }
+    }>
 ) {
     return (
         <div className="d-flex">

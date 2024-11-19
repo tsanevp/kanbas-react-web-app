@@ -4,6 +4,7 @@ import QuizEditorControls from "./QuizEditorControls";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import * as quizClient from "../client";
+import * as courseClient from "../../client";
 import { addQuizzes, updateQuizzes } from "../reducer";
 
 
@@ -39,23 +40,19 @@ export default function QuizEditor() {
 
     const createQuizForCourse = async () => {
         if (!cid) return;
-        const newQuiz = await quizClient.createQuiz(cid, quiz);
+        const newQuiz = await courseClient.createQuizzesForCourse(cid, quiz);
         dispatch(addQuizzes(newQuiz));
     };
 
     const saveQuiz = async () => {
-        console.log("saving");
         await quizClient.updateQuiz({ ...quiz, editing: false });
         dispatch(updateQuizzes(quiz));
     };
 
     useEffect(() => {
         if (qid !== "AddNewQuiz") {
-            console.log(quizzes);
-            console.log(cid, "hello", qid);
             const existingQuiz = quizzes.find((quiz: any) => quiz._id === qid && quiz.course === cid);
             if (existingQuiz) setQuiz(existingQuiz);
-            console.log("existingQuiz");
         }
     }, [qid, quizzes, cid]);
 
