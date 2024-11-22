@@ -1,0 +1,41 @@
+.row > * {
+    margin-top: 30px;
+}
+.card:hover {
+    transition: 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+.card-body {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.card-body:hover {
+    text-decoration: underline;
+    text-decoration-color: rgba(220,53,69);
+}
+
+.card-body * {
+    margin: 0px;
+}
+
+.card-title {
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+
+.card-subtext {
+    font-size: 12px;
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-footer-icons {
+    padding-left: 15px;
+    padding-bottom: 12px;
+}

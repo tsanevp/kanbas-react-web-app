@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body * {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@media (min-width: 768px) {
+    #wd-kanbas .wd-main-content-offset {
+        padding-left: 140px !important;
+    }
+}
+
+.list-group.wd>.list-group-item.active {
+    color: black;
+    background-color: white;
+    border-left: 3px solid black !important;
+}
+
+#wd-courses-navigation a, #wd-account-navigation a {
+    font-size: 1rem;
+}
+
+#wd-courses-navigation a:hover, #wd-account-navigation a:hover {
+    text-decoration: underline;
+    text-decoration-color: rgba(220, 53, 69);
+}
+
+.btn {
+    font-size: 1rem;
+    border-radius: 3px;
+}
+
+.btn-secondary {
+    --bs-btn-color: #000 !important;
+    --bs-btn-bg: #f5f5f5 !important;
+    --bs-btn-border-color: #c7cdd1 !important;
+    --bs-btn-hover-color: #fff !important;
+}
+
+.bg-secondary {
+    
+    --bs-secondary-rgb: 199, 205, 209;
+}
+
+.list-group-item {
+    --bs-list-group-border-color: gray;
+}
+
+.wd-lesson {
+    border-left: 3px solid green !important;
+}
+
+#wd-publish-all-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grade-percent {
+    font-size: 1rem;
+    border: 1px solid gray; 
+    padding: 5px; 
+    border-radius: 20px; 
+}
+
+.wd-assignment-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.wd-quiz-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.edit-container {
+    border: 1px solid #c7cdd1;
+    border-radius: 8px;
+    padding: 10px 10px;
+}
+
+.edit-labels {
+    font-weight: bold;
+}
