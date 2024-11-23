@@ -11,7 +11,8 @@ export default function TOC() {
       <li className="nav-item"><Link to="/Labs/Lab4" className={`nav-link ${pathname.includes("Lab4") ? "active" : ""}`}>Lab 4</Link></li>
       <li className="nav-item"><Link to="/Labs/Lab5" className={`nav-link ${pathname.includes("Lab5") ? "active" : ""}`}>Lab 5</Link></li>
       <li className="nav-item"><Link to="/Kanbas" className={`nav-link ${pathname.includes("Kanbas") ? "active" : ""}`}>Kanbas</Link></li>
-      <li className="nav-item"><a id="wd-github" href="https://github.com/tsanevp/kanbas-react-web-app/tree/a4" target="_blank" rel="noreferrer" className={`nav-link ${pathname.includes("Github") ? "active" : ""}`}>Github Repo</a></li>
+      <li className="nav-item"><a id="wd-github" href="https://github.com/tsanevp/kanbas-react-web-app" target="_blank" rel="noreferrer" className={`nav-link ${pathname.includes("Github") ? "active" : ""}`}>Client Github Repo</a></li>
+      <li className="nav-item"><a id="wd-github" href="https://github.com/tsanevp/kanbas-node-server-app" target="_blank" rel="noreferrer" className={`nav-link ${pathname.includes("Github") ? "active" : ""}`}>Server Github Repo</a></li>
     </ul>
   );
 }  
