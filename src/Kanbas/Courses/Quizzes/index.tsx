@@ -26,7 +26,7 @@ export default function Quizzes() {
 
     useEffect(() => {
         fetchQuizzes();
-    });
+    }, []);
 
     return (
         <div id="wd-quizzes">
