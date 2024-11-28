@@ -12,23 +12,7 @@ const assignmentsSlice = createSlice({
             state.assignments = action.payload;
         },
         addAssignments: (state, { payload: assignment }) => {
-            const newAssignment: any =
-            {
-                _id: assignment._id,
-                title: assignment.title,
-                course: assignment.course,
-                description: assignment.description,
-                points: assignment.points,
-                assignmentGroup: assignment.assignmentGroup,
-                displayGradeAs: assignment.displayGradeAs,
-                submissionType: assignment.submissionType,
-                onlineEntryOptions: assignment.onlineEntryOptions,
-                assignTo: assignment.assignTo,
-                dueDate: assignment.dueDate,
-                availableFrom: assignment.availableFrom,
-                availableUntil: assignment.availableUntil
-            }
-            state.assignments = [...state.assignments, newAssignment] as any;
+            state.assignments = [...state.assignments, assignment] as any;
         },
         deleteAssignments: (state, { payload: assignmentId }) => {
             state.assignments = state.assignments.filter(

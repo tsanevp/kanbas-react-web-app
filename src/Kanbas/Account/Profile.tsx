@@ -5,22 +5,27 @@ import { setCurrentUser } from "./reducer";
 import * as client from "./client";
 
 export default function Profile() {
-    const [profile, setProfile] = useState<any>({});
     const dispatch = useDispatch();
     const navigate = useNavigate();
+   
     const { currentUser } = useSelector((state: any) => state.accountReducer);
+    const [profile, setProfile] = useState<any>({});
+
     const fetchProfile = useCallback(() => {
+        console.log("inside");
         if (!currentUser) return navigate("/Kanbas/Account/Signin");
         setProfile(currentUser);
     }, [currentUser, navigate]);
+
+    const updateProfile = async () => {
+        const updatedProfile = await client.updateUser(profile);
+        dispatch(setCurrentUser(updatedProfile));
+    };
+
     const signout = async () => {
         await client.signout();
         dispatch(setCurrentUser(null));
         navigate("/Kanbas/Account/Signin");
-    };
-    const updateProfile = async () => {
-        const updatedProfile = await client.updateUser(profile);
-        dispatch(setCurrentUser(updatedProfile));
     };
 
     useEffect(() => { fetchProfile(); }, [fetchProfile]);

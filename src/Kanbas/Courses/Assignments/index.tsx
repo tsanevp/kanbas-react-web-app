@@ -30,7 +30,9 @@ export default function Assignments() {
     useEffect(() => {
         fetchAssignments();
     }, []);
+    console.log(assignments);
     return (
+
         <div id="wd-assignments">
             <AssignmentControls /><br /><br />
             <ul id="wd-modules" className="list-group rounded-0">
@@ -52,7 +54,7 @@ export default function Assignments() {
                         </div>
                     </div>
                     <ul className="wd-lessons list-group rounded-0">
-                        {assignments.filter((assignment: any) => assignment.course === cid).map((assignment: any) => (
+                        {assignments.map((assignment: any) => (
                             <li key={assignment._id} className="wd-lesson list-group-item p-3 ps-1 d-flex justify-content-between align-items-center">
                                 <div className="assignment-left-controls me-3">
                                     <AssignmentLeftControls />

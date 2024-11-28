@@ -47,7 +47,8 @@ export default function AssignmentEditor() {
 
     useEffect(() => {
         if (aid !== "AddNewAssignment") {
-            const existingAssignment = assignments.find((a: any) => a._id === aid && a.course === cid);
+            console.log(assignments);
+            const existingAssignment = assignments.find((a: any) => a._id === aid && a.course._id === cid);
             if (existingAssignment) setAssignment(existingAssignment);
         }
     }, [aid, assignments, cid]);

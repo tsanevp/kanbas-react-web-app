@@ -1,6 +1,5 @@
 [
     {
-        "_id": "Q101",
         "published": true,
         "course": "RS101",
         "title": "Q1 - HTML",
@@ -11,8 +10,14 @@
         "questionCount": 10,
         "assignmentGroup": "Assignments",
         "shuffleAnswers": true,
-        "timeLimit": { "selected": true, "value": 30 },
-        "multipleAttempts": { "selected": true, "value": 30 },
+        "timeLimit": {
+            "selected": true,
+            "value": 30
+        },
+        "multipleAttempts": {
+            "selected": true,
+            "value": 30
+        },
         "showCorrectAnswers": true,
         "accessCode": "",
         "oneQuestionAtATime": true,
@@ -23,7 +28,6 @@
         "availableUntil": "2024-05-20T23:59"
     },
     {
-        "_id": "Q102",
         "published": true,
         "course": "RS101",
         "title": "Q1 - HTML",
@@ -34,8 +38,14 @@
         "questionCount": 10,
         "assignmentGroup": "Assignments",
         "shuffleAnswers": true,
-        "timeLimit": { "selected": true, "value": 30 },
-        "multipleAttempts": { "selected": true, "value": 30 },
+        "timeLimit": {
+            "selected": true,
+            "value": 30
+        },
+        "multipleAttempts": {
+            "selected": true,
+            "value": 30
+        },
         "showCorrectAnswers": true,
         "accessCode": "",
         "oneQuestionAtATime": true,

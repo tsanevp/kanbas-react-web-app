@@ -1,27 +1,14 @@
 import { FaUserCircle } from "react-icons/fa";
-import { useParams } from "react-router-dom";
-import * as enrollmentClient from "../Enrollments/client";
-import { useEffect, useState } from "react";
+import PeopleDetails from "./Details";
+import { Link, useLocation } from "react-router-dom";
 
-export default function PeopleTable() {
-    const { cid } = useParams();
+export default function PeopleTable({ users = [] }: Readonly<{ users?: any[] }>) {
+    const location = useLocation();
 
-    const [enrollments, setEnrollments] = useState<any[]>([]);
-    const fetchEnrollments = async () => {
-        let enrollments = [];
-        try {
-            enrollments = await enrollmentClient.getAllEnrollmentsForCourse(cid);
-        } catch (error) {
-            console.error(error);
-        }
-        setEnrollments(enrollments);
-    };
-    useEffect(() => {
-        fetchEnrollments();
-    });
-
+    const isPeoplePage = location.pathname.startsWith("/Kanbas/Courses") && location.pathname.endsWith("/People");
     return (
         <div id="wd-people-table">
+            <PeopleDetails />
             <table className="table table-striped">
                 <thead>
                     <tr>
@@ -34,13 +21,24 @@ export default function PeopleTable() {
                     </tr>
                 </thead>
                 <tbody>
-                    {enrollments
+                    {users
                         .map((user: any) => (
                             <tr key={user._id}>
                                 <td className="wd-full-name text-nowrap">
-                                    <FaUserCircle className="me-2 fs-1 text-secondary" />
-                                    <span className="wd-first-name">{user.firstName}</span>
-                                    <span className="wd-last-name">{user.lastName}</span>
+                                    {isPeoplePage ? (
+                                        <>
+                                            <span className="wd-first-name">{user.firstName}</span>
+                                            {" "}
+                                            <span className="wd-last-name">{user.lastName}</span>
+                                        </>
+                                    ) : (
+                                        <Link to={`/Kanbas/Account/Users/${user._id}`} className="text-decoration-none">
+                                            <FaUserCircle className="me-2 fs-1 text-secondary" />
+                                            <span className="wd-first-name">{user.firstName}</span>
+                                            {" "}
+                                            <span className="wd-last-name">{user.lastName}</span>
+                                        </Link>
+                                    )}
                                 </td>
                                 <td className="wd-login-id">{user.loginId}</td>
                                 <td className="wd-section">{user.section}</td>
