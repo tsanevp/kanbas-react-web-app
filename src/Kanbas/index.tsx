@@ -1,17 +1,16 @@
+import { useEffect, useState } from "react";
 import { Routes, Route, Navigate } from "react-router";
+import { useSelector } from "react-redux";
+import * as courseClient from "./Courses/client";
+import * as userClient from "./Account/client";
 import Account from "./Account";
 import Dashboard from "./Dashboard";
 import KanbasNavigaton from "./Navigation"
 import Courses from "./Courses";
-import * as userClient from "./Account/client";
-import { useEffect, useState } from "react";
-import "./styles.css";
 import ProtectedRoute from "./Account/ProtectedRoute";
 import ProtectedCourseRoute from "./Courses/ProtectedRoute";
 import Session from "./Account/Session";
-import { useSelector } from "react-redux";
-import * as courseClient from "./Courses/client";
-
+import "./styles.css";
 
 export default function Kanbas() {
     const { currentUser } = useSelector((state: any) => state.accountReducer);

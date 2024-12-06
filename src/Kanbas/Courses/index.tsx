@@ -10,6 +10,8 @@ import { FaAlignJustify } from "react-icons/fa";
 import PeopleTable from "./People/Table";
 import { useEffect, useState } from "react";
 import * as client from "./client";
+import QuizDetails from "./Quizzes/QuizDetailScreen";
+import QuizTaking from "./Quizzes/TakingQuiz/QuizTaking";
 
 export default function Courses({ courses }: Readonly<{ courses: any[]; }>) {
     const { cid } = useParams();
@@ -20,7 +22,6 @@ export default function Courses({ courses }: Readonly<{ courses: any[]; }>) {
     const fetchUsers = async () => {
         if (!cid) return;
         const users = await client.findUsersForCourse(cid);
-        console.log(users);
         setUsers(users);
     };
     useEffect(() => {
@@ -46,7 +47,10 @@ export default function Courses({ courses }: Readonly<{ courses: any[]; }>) {
                         <Route path="Assignments" element={<Assignments />} />
                         <Route path="Quizzes" element={<Quizzes />} />
                         <Route path="Assignments/:aid" element={<AssignmentEditor />} />                        
-                        <Route path="Quizzes/:qid" element={<QuizEditor />} />
+                        <Route path="Quizzes/:qid" element={<QuizDetails />} />
+                        <Route path="Quizzes/:qid/Editor" element={<QuizEditor />} />
+                        <Route path="Quizzes/:qid/InProgress" element={<QuizTaking />} />
+                        <Route path="Quizzes/:qid/Preview" element={<QuizTaking />} />
                         <Route path="People" element={<PeopleTable users={users} />} />
                     </Routes>
                 </div>

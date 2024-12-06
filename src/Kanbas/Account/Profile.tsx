@@ -12,7 +12,6 @@ export default function Profile() {
     const [profile, setProfile] = useState<any>({});
 
     const fetchProfile = useCallback(() => {
-        console.log("inside");
         if (!currentUser) return navigate("/Kanbas/Account/Signin");
         setProfile(currentUser);
     }, [currentUser, navigate]);
