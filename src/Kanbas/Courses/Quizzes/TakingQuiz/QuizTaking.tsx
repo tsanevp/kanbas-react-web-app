@@ -20,6 +20,8 @@ export default function QuizTaking() {
     const [mode, setMode] = useState<"one-by-one" | "all-at-once">("one-by-one");
     const [startTime, setStartTime] = useState(Date.now());
     const { currentUser } = useSelector((state: any) => state.accountReducer);
+    const [remainingTime, setRemainingTime] = useState<number>(0);
+    const [timerInterval, setTimerInterval] = useState<NodeJS.Timeout | null>(null);
 
     const navigateToQuizEditor = async () => {
         dispatch(editQuizzes(quiz._id));
@@ -30,6 +32,11 @@ export default function QuizTaking() {
         const fetchedQuiz = quizzes.find((quiz: any) => quiz._id === qid && quiz.course._id === cid);
         if (fetchedQuiz) {
             setQuiz(fetchedQuiz);
+
+            if (fetchedQuiz.timeLimit.selected) {
+                const quizDuration = (fetchedQuiz.timeLimit.value ?? 0) * 60;
+                setRemainingTime(quizDuration);
+            }
 
             // Initialize answers array based on quiz questions
             const initialAnswers = fetchedQuiz.questions.map((question: any) => {
@@ -47,6 +54,27 @@ export default function QuizTaking() {
             setAnswers(initialAnswers);
             setMode(fetchedQuiz.oneQuestionAtATime ? "one-by-one" : "all-at-once");
         }
+    };
+
+    const startTimer = () => {
+        const interval = setInterval(() => {
+            setRemainingTime((prevTime) => {
+                if (prevTime <= 1) {
+                    clearInterval(interval);
+                    handleSubmit();
+                    return 0;
+                }
+                return prevTime - 1;
+            });
+        }, 1000);
+        setTimerInterval(interval);
+    };
+
+    // Convert remaining time to MM:SS format
+    const formatTime = (timeInSeconds: number) => {
+        const minutes = Math.floor(timeInSeconds / 60);
+        const seconds = timeInSeconds % 60;
+        return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
     };
 
     const handleAnswerChange = (questionIndex: number, answer: any) => {
@@ -84,6 +112,7 @@ export default function QuizTaking() {
     const handleSubmit = async () => {
         if (!cid || !qid) return;
 
+        clearInterval(timerInterval!);
         const calculatedScore = calculateScore();
         const elapsedTime = Date.now() - startTime;
         const timeTaken = (elapsedTime / 1000 / 60).toFixed(2).toString();
@@ -130,7 +159,18 @@ export default function QuizTaking() {
 
     useEffect(() => {
         fetchQuizDetails();
+
+        
     }, [qid, cid, quizzes]);
+
+    useEffect(() => {
+        if (quiz && remainingTime > 0) {
+            startTimer();
+        }
+        return () => {
+            if (timerInterval) clearInterval(timerInterval);
+        };
+    }, [quiz]);
 
     if (!quiz) {
         return <div>Loading quiz...</div>;
@@ -151,6 +191,7 @@ export default function QuizTaking() {
             )}
 
             <p className="py-0 mb-0 mt-4">Started: {formatDate(new Date().toISOString())}</p>
+            <p className="py-0 mb-0">Time Remaining: {formatTime(remainingTime)}</p>
             <h3 className="py-0 my-0">Quiz Instructions</h3>
             <hr />
             <div className="quiz-taking">
@@ -323,16 +364,16 @@ export default function QuizTaking() {
 
 
                 {currentUser.role === "FACULTY" && (
-                <div className="d-flex justify-content-center align-items-center mt-5">
-                    <button
-                        className="btn btn-secondary me-3 w-100"
-                        onClick={navigateToQuizEditor}
-                    >
-                        <TiPencil className="me-2 fs-5" />
-                        Keep Editing This Quiz
-                    </button>
-                </div>
-            )}
+                    <div className="d-flex justify-content-center align-items-center mt-5">
+                        <button
+                            className="btn btn-secondary me-3 w-100"
+                            onClick={navigateToQuizEditor}
+                        >
+                            <TiPencil className="me-2 fs-5" />
+                            Keep Editing This Quiz
+                        </button>
+                    </div>
+                )}
 
                 {/* Question navigation at the bottom */}
                 <div className="question-navigation mt-4">

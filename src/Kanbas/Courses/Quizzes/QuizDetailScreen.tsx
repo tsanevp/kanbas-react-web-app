@@ -29,9 +29,10 @@ export default function QuizDetails() {
     };
 
     const fetchPreviousQuizAttempts = async () => {
-        if (!cid) return;
+        if (!cid || !qid) return;
 
-        const fetchedQuizAttempts = await userClient.findQuizResultsForUser(cid);
+        const fetchedQuizAttempts = await userClient.findQuizResultsForUser(cid, qid);
+        console.log(fetchedQuizAttempts)
         if (fetchedQuizAttempts) setQuizResults(fetchedQuizAttempts);
         setMaxScoreQuizResult(getMaxScoreQuizResult(fetchedQuizAttempts));
     };
@@ -245,23 +246,36 @@ export default function QuizDetails() {
                         <p className="mb-1 me-3"><strong>Time Limit:</strong> {quiz.timeLimit.selected ? `${quiz.timeLimit.value} Minutes` : "None"}</p>
                     </div>
                     <div className="d-flex justify-content-center align-items-center m-3">
-                        {quizResults && quizResults.length === 0 && (<Link
-                            id="wd-start-quiz"
-                            className="btn btn-danger"
-                            to={`/Kanbas/Courses/${cid}/Quizzes/${quiz._id}/InProgress`}
-                        >
-                            Take Quiz
-                        </Link>
-                        )}
-                        {quizResults && quizResults.length > 0 && quiz.multipleAttempts.selected && quizResults.length < quiz.multipleAttempts.value && (<Link
-                            id="wd-start-quiz"
-                            className="btn btn-danger"
-                            to={`/Kanbas/Courses/${cid}/Quizzes/${quiz._id}/InProgress`}
-                        >
-                            Retake Quiz
-                        </Link>
-                        )}
+                        {new Date(quiz.availableUntil).getTime() > new Date().getTime() &&
+                            (
+                                // Condition for "Take Quiz"
+                                (quizResults && quizResults.length === 0 && (
+                                    <Link
+                                        id="wd-start-quiz"
+                                        className="btn btn-danger"
+                                        to={`/Kanbas/Courses/${cid}/Quizzes/${quiz._id}/InProgress`}
+                                    >
+                                        Take Quiz
+                                    </Link>
+                                )) ||
+                                // Condition for "Retake Quiz"
+                                (quizResults &&
+                                    quizResults.length > 0 &&
+                                    quiz.multipleAttempts.selected &&
+                                    quizResults.length < quiz.multipleAttempts.value && (
+                                        <Link
+                                            id="wd-start-quiz"
+                                            className="btn btn-danger"
+                                            to={`/Kanbas/Courses/${cid}/Quizzes/${quiz._id}/InProgress`}
+                                        >
+                                            Retake Quiz
+                                        </Link>
+                                    )
+                                )
+                            )
+                        }
                     </div>
+
                     <hr />
 
                     {maxScoreQuizResult && (

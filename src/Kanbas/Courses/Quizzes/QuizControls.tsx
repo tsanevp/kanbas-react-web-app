@@ -17,27 +17,27 @@ export default function QuizControls() {
                         </button>
                         <ul className="dropdown-menu">
                             <li>
-                                <a id="wd-context-menu-edit-btn" className="dropdown-item" href="/">
+                                <a id="wd-context-menu-edit-btn" className="dropdown-item">
                                     Edit
                                 </a>
                             </li>
                             <li>
-                                <a id="wd-context-menu-delete-btn" className="dropdown-item" href="/">
+                                <a id="wd-context-menu-delete-btn" className="dropdown-item">
                                     Delete
                                 </a>
                             </li>
                             <li>
-                                <a id="wd-context-menu-publish-btn" className="dropdown-item" href="/">
+                                <a id="wd-context-menu-publish-btn" className="dropdown-item">
                                     Publish
                                 </a>
                             </li>
                             <li>
-                                <a id="wd-context-menu-copy-btn" className="dropdown-item" href="/">
+                                <a id="wd-context-menu-copy-btn" className="dropdown-item">
                                     Copy
                                 </a>
                             </li>
                             <li>
-                                <a id="wd-context-menu-sort-btn" className="dropdown-item" href="/">
+                                <a id="wd-context-menu-sort-btn" className="dropdown-item">
                                     Sort
                                 </a>
                             </li>

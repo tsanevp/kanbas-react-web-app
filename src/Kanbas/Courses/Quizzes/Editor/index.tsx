@@ -73,9 +73,10 @@ export default function QuizEditor() {
     const [activeTab, setActiveTab] = useState("Details"); // Default tab
 
     const createAndPublishQuizForCourse = async () => {
-        const newQuiz = { ...quiz, published: true };
-        setQuiz(newQuiz);
-        createQuizForCourse();
+        if (!cid) return;
+        const newQuiz = await courseClient.createQuizzesForCourse(cid, { ...quiz, published: true });
+        dispatch(addQuizzes(newQuiz));
+        navigate(`/Kanbas/Courses/${cid}/Quizzes`);
     };
 
     const saveAndPublishQuiz = async () => {

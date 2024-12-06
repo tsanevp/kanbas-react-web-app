@@ -90,8 +90,7 @@ export const submitQuizForUser = async (courseId: string, quizId: string, quizRe
     return response.data;
 };
 
-export const findQuizResultsForUser = async (courseId: string) => {
-    const response = await axiosWithCredentials.get(`${USERS_API}/current/courses/${courseId}/quizResults`);
-    console.log("in client", response.data)
+export const findQuizResultsForUser = async (courseId: string, quizId: string) => {
+    const response = await axiosWithCredentials.get(`${USERS_API}/current/courses/${courseId}/quizResults/${quizId}`);
     return response.data;
 };
