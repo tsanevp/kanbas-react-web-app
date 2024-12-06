@@ -118,9 +118,8 @@ export default function QuizTaking() {
         const timeTaken = (elapsedTime / 1000 / 60).toFixed(2).toString();
 
         const finalResult = { answers: answers, finalScore: calculatedScore, timeTaken: timeTaken, submissionDate: new Date().toISOString() };
-        console.log("submittttinggg", finalResult);
 
-        const result = await userClient.submitQuizForUser(cid, qid, finalResult);
+        await userClient.submitQuizForUser(cid, qid, finalResult);
         navigate(`/Kanbas/Courses/${cid}/Quizzes/${qid}`);
     };
 

@@ -32,7 +32,6 @@ export default function QuizDetails() {
         if (!cid || !qid) return;
 
         const fetchedQuizAttempts = await userClient.findQuizResultsForUser(cid, qid);
-        console.log(fetchedQuizAttempts)
         if (fetchedQuizAttempts) setQuizResults(fetchedQuizAttempts);
         setMaxScoreQuizResult(getMaxScoreQuizResult(fetchedQuizAttempts));
     };
