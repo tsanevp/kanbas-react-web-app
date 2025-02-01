@@ -6,11 +6,11 @@ import GreenCheckmark from "./GreenCheckmark";
 import { useSelector } from "react-redux";
 
 export default function ModuleControlButtons({ moduleId, deleteModule, editModule }:
-    {
-        moduleId: string;
+    Readonly<{
+        moduleId: any;
         deleteModule: (moduleId: string) => void;
         editModule: (moduleId: string) => void;
-    }) {
+    }>) {
     const { currentUser } = useSelector((state: any) => state.accountReducer);
     return (
         <>

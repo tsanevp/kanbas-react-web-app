@@ -12,7 +12,6 @@ export default function AssignmentEditor() {
     const { cid, aid } = useParams();
     const { assignments } = useSelector((state: any) => state.assignmentsReducer);
     const [assignment, setAssignment] = useState({
-        _id: new Date().getTime().toString(),
         title: "",
         course: cid,
         description: "",
@@ -47,7 +46,7 @@ export default function AssignmentEditor() {
 
     useEffect(() => {
         if (aid !== "AddNewAssignment") {
-            const existingAssignment = assignments.find((a: any) => a._id === aid && a.course === cid);
+            const existingAssignment = assignments.find((a: any) => a._id === aid && a.course._id === cid);
             if (existingAssignment) setAssignment(existingAssignment);
         }
     }, [aid, assignments, cid]);

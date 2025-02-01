@@ -6,6 +6,7 @@ import QuizLeftControls from "./QuizLeftControls";
 import QuizControls from "./QuizControls";
 import { IoCaretDownSharp } from "react-icons/io5";
 import * as quizClient from "./client";
+import * as coursesClient from "../client";
 import { deleteQuizzes, editQuizzes, setQuizzes } from "./reducer";
 
 export default function Quizzes() {
@@ -18,9 +19,9 @@ export default function Quizzes() {
         await quizClient.deleteQuiz(quizId);
         dispatch(deleteQuizzes(quizId));
     };
-    
+
     const fetchQuizzes = async () => {
-        const quizzes = await quizClient.getQuizzesForCourse(cid as string);
+        const quizzes = await coursesClient.findQuizzesForCourse(cid as string);
         dispatch(setQuizzes(quizzes));
     };
 
@@ -39,38 +40,34 @@ export default function Quizzes() {
                         Assignment Quizzes
                     </div>
                     <ul className="wd-lessons list-group rounded-0">
-                        {quizzes.filter((quiz: any) => currentUser.role !== "FACULTY" ? quiz.published: true).map((quiz: any) => (
+                        {quizzes.filter((quiz: any) => currentUser.role !== "FACULTY" ? quiz.published : true).map((quiz: any) => (
                             <li key={quiz._id} className="wd-lesson list-group-item p-3 ps-1 d-flex justify-content-between align-items-center">
                                 <div className="quiz-left-controls me-3">
                                     <QuizLeftControls />
                                 </div>
 
                                 <div className="flex-grow-1">
-                                    {currentUser.role === "FACULTY" ?
-                                        (
-                                            <a className="wd-assignment-link fw-bold"
-                                                onClick={() => { dispatch(editQuizzes(quiz._id)) }}
-                                                href={`#/Kanbas/Courses/${cid}/Quizzes/${quiz._id}`}>
-                                                {quiz.title}
-                                            </a>
-                                        ) : <span className="fw-bold">{quiz.title}</span>
-                                    }
+                                    <a className="wd-assignment-link fw-bold"
+                                        onClick={() => { dispatch(editQuizzes(quiz._id)) }}
+                                        href={`#/Kanbas/Courses/${cid}/Quizzes/${quiz._id}`}>
+                                        {quiz.title}
+                                    </a>
 
                                     <div className="text-muted">
 
-                                        {getHeading(quiz.availableFrom, quiz.availableUntil)} | <b>Due</b> {formatDate(quiz.dueDate)} | {quiz.points} pts | {quiz.questionCount} Questions
+                                        {getHeading(quiz.availableFrom, quiz.availableUntil)} | <b>Due</b> {formatDate(quiz.dueDate)} | {getQuizPoints(quiz)} pts | {quiz.questions.length} Questions
                                     </div>
                                 </div>
 
                                 {currentUser.role === "FACULTY" && (
                                     <div className="quiz-control-buttons ms-3">
-                                        <AssignmentRightControls 
+                                        <AssignmentRightControls
                                             quizId={quiz._id}
                                             deleteQuizzes={(quizId) => { removeQuiz(quizId) }}
                                         />
                                     </div>
                                 )}
-                                
+
                             </li>
                         ))}
                     </ul>
@@ -78,6 +75,10 @@ export default function Quizzes() {
             </ul>
         </div>
     );
+}
+
+function getQuizPoints(quiz: any) {
+    return quiz.questions.reduce((sum: number, question: { points: any; }) => sum + (question.points || 0), 0);
 }
 
 function getHeading(availableFrom: string, availableUntil: string) {

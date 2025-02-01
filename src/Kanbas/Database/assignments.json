@@ -1,6 +1,5 @@
 [
     {
-        "_id": "A101",
         "title": "Propulsion Assignment",
         "course": "RS101",
         "description": "Analyze and report on the principles of propulsion, including types and applications.",
@@ -21,7 +20,6 @@
         "availableUntil": "2024-05-20T23:59"
     },
     {
-        "_id": "A102",
         "title": "Combustion Analysis",
         "course": "RS101",
         "description": "Conduct a thorough analysis of combustion processes and report your findings.",
@@ -42,7 +40,6 @@
         "availableUntil": "2024-06-01T23:59"
     },
     {
-        "_id": "A103",
         "title": "Nozzle Design Project",
         "course": "RS101",
         "description": "Design and simulate a nozzle using appropriate engineering principles.",
@@ -63,7 +60,6 @@
         "availableUntil": "2024-06-15T23:59"
     },
     {
-        "_id": "A201",
         "title": "Aerodynamics Quiz",
         "course": "RS102",
         "description": "Complete the quiz covering the principles of aerodynamics.",
@@ -84,7 +80,6 @@
         "availableUntil": "2024-04-30T23:59"
     },
     {
-        "_id": "A202",
         "title": "Flow Analysis",
         "course": "RS102",
         "description": "Analyze fluid flow characteristics in various scenarios and report your findings.",
@@ -105,7 +100,6 @@
         "availableUntil": "2024-06-05T23:59"
     },
     {
-        "_id": "A203",
         "title": "Heating Analysis",
         "course": "RS102",
         "description": "Conduct an analysis on heating methods and their effectiveness.",
@@ -126,7 +120,6 @@
         "availableUntil": "2024-06-10T23:59"
     },
     {
-        "_id": "A301",
         "title": "Structural Design Task",
         "course": "RS103",
         "description": "Complete a task focusing on structural design principles and their applications.",
@@ -147,7 +140,6 @@
         "availableUntil": "2024-06-15T23:59"
     },
     {
-        "_id": "A302",
         "title": "Orbital Calculations",
         "course": "RS103",
         "description": "Perform orbital calculations and submit your results along with a brief explanation.",
@@ -168,7 +160,6 @@
         "availableUntil": "2024-06-20T23:59"
     },
     {
-        "_id": "A303",
         "title": "Systems Engineering Exam",
         "course": "RS103",
         "description": "Complete the final exam on systems engineering principles and applications.",
@@ -189,7 +180,6 @@
         "availableUntil": "2024-06-25T23:59"
     },
     {
-        "_id": "A401",
         "title": "Hydrocarbon Structures Analysis",
         "course": "RS104",
         "description": "Analyze the structure of various hydrocarbons and their bonding patterns. Include diagrams and a detailed explanation of their stability. Discuss their industrial relevance.",
@@ -210,7 +200,6 @@
         "availableUntil": "2024-05-13T23:59"
     },
     {
-        "_id": "A402",
         "title": "Stereochemistry Lab Report",
         "course": "RS104",
         "description": "Submit a detailed lab report on stereochemistry with diagrams illustrating enantiomers and diastereomers.",
@@ -231,7 +220,6 @@
         "availableUntil": "2024-06-01T23:59"
     },
     {
-        "_id": "A403",
         "title": "Organic Synthesis Project",
         "course": "RS104",
         "description": "Design and conduct an organic synthesis experiment, documenting your process and results.",
@@ -252,7 +240,6 @@
         "availableUntil": "2024-06-15T23:59"
     },
     {
-        "_id": "A501",
         "title": "Coordination Chemistry Quiz",
         "course": "RS105",
         "description": "Complete the quiz covering the basics of coordination chemistry.",
@@ -273,7 +260,6 @@
         "availableUntil": "2024-04-30T23:59"
     },
     {
-        "_id": "A502",
         "title": "Inorganic Compound Synthesis",
         "course": "RS105",
         "description": "Conduct an experiment on synthesizing an inorganic compound and report your findings.",
@@ -294,7 +280,6 @@
         "availableUntil": "2024-06-10T23:59"
     },
     {
-        "_id": "A503",
         "title": "Metal Complexes Analysis",
         "course": "RS105",
         "description": "Analyze a metal complex and discuss its properties and applications.",
@@ -315,7 +300,6 @@
         "availableUntil": "2024-06-15T23:59"
     },
     {
-        "_id": "A601",
         "title": "Thermodynamics Problem Set",
         "course": "RS106",
         "description": "Complete the problem set on thermodynamics principles.",
@@ -336,7 +320,6 @@
         "availableUntil": "2024-06-10T23:59"
     },
     {
-        "_id": "A602",
         "title": "Kinetics Experiment Report",
         "course": "RS106",
         "description": "Write a report on your kinetics experiment, including data and analysis.",
@@ -357,7 +340,6 @@
         "availableUntil": "2024-06-15T23:59"
     },
     {
-        "_id": "A603",
         "title": "Quantum Mechanics Exam",
         "course": "RS106",
         "description": "Take the exam covering quantum mechanics concepts.",
@@ -378,7 +360,6 @@
         "availableUntil": "2024-06-25T23:59"
     },
     {
-        "_id": "A701",
         "title": "Elvish Language Translation",
         "course": "RS107",
         "description": "Translate a passage of text into Elvish and provide a commentary on your translation choices.",
@@ -399,7 +380,6 @@
         "availableUntil": "2024-05-15T23:59"
     },
     {
-        "_id": "A702",
         "title": "Sindarin and Quenya Phonetics",
         "course": "RS107",
         "description": "Record a presentation on the phonetic characteristics of Sindarin and Quenya.",
@@ -420,7 +400,6 @@
         "availableUntil": "2024-06-05T23:59"
     },
     {
-        "_id": "A703",
         "title": "Dwarvish Script Analysis",
         "course": "RS107",
         "description": "Analyze the structure and usage of Dwarvish scripts in literature.",
@@ -441,7 +420,6 @@
         "availableUntil": "2024-06-10T23:59"
     },
     {
-        "_id": "A801",
         "title": "Inter-species Conflict Essay",
         "course": "RS108",
         "description": "Write an essay discussing the implications of inter-species conflicts in Middle-earth.",
@@ -462,7 +440,6 @@
         "availableUntil": "2024-06-15T23:59"
     },
     {
-        "_id": "A802",
         "title": "Council of Elrond Case Study",
         "course": "RS108",
         "description": "Analyze the decisions made during the Council of Elrond and their impact on Middle-earth.",
@@ -483,7 +460,6 @@
         "availableUntil": "2024-06-20T23:59"
     },
     {
-        "_id": "A803",
         "title": "Diplomatic Relations Report",
         "course": "RS108",
         "description": "Prepare a report on the diplomatic relations between different races in Middle-earth.",
@@ -504,7 +480,6 @@
         "availableUntil": "2024-06-30T23:59"
     },
     {
-        "_id": "A901",
         "title": "Magic Artifacts Essay",
         "course": "RS109",
         "description": "Write an essay discussing the significance of magic artifacts in Tolkien's works.",
@@ -525,7 +500,6 @@
         "availableUntil": "2024-06-15T23:59"
     },
     {
-        "_id": "A902",
         "title": "Wizards’ Power Dynamics",
         "course": "RS109",
         "description": "Discuss the power dynamics among wizards in Middle-earth.",
@@ -546,7 +520,6 @@
         "availableUntil": "2024-06-20T23:59"
     },
     {
-        "_id": "A903",
         "title": "Ring of Power Analysis",
         "course": "RS109",
         "description": "Analyze the significance of the One Ring and its influence on events in Middle-earth.",
@@ -567,7 +540,6 @@
         "availableUntil": "2024-06-25T23:59"
     },
     {
-        "_id": "A1001",
         "title": "Democratic Education Presentation",
         "course": "RS110",
         "description": "Create a presentation on the principles of democratic education.",
@@ -588,7 +560,6 @@
         "availableUntil": "2024-06-15T23:59"
     },
     {
-        "_id": "A1002",
         "title": "Civic Responsibility Essay",
         "course": "RS110",
         "description": "Write an essay on civic responsibility in a democratic society.",
@@ -609,7 +580,6 @@
         "availableUntil": "2024-06-10T23:59"
     },
     {
-        "_id": "A1003",
         "title": "Social Equality Debate",
         "course": "RS110",
         "description": "Engage in a debate on the topic of social equality.",
@@ -630,7 +600,6 @@
         "availableUntil": "2024-06-20T23:59"
     },
     {
-        "_id": "A1101",
         "title": "Independence Movement Analysis",
         "course": "RS111",
         "description": "Analyze the key events of a specific independence movement.",
@@ -651,7 +620,6 @@
         "availableUntil": "2024-06-30T23:59"
     },
     {
-        "_id": "A1102",
         "title": "Simón Bolívar’s Philosophy Paper",
         "course": "RS111",
         "description": "Write a paper on Simón Bolívar’s philosophical contributions.",
@@ -672,7 +640,6 @@
         "availableUntil": "2024-06-15T23:59"
     },
     {
-        "_id": "A1103",
         "title": "Enlightenment Thought Report",
         "course": "RS111",
         "description": "Discuss the impact of Enlightenment thought on modern politics.",
@@ -693,7 +660,6 @@
         "availableUntil": "2024-06-10T23:59"
     },
     {
-        "_id": "A1201",
         "title": "Art Movement Presentation",
         "course": "RS112",
         "description": "Prepare a presentation on a specific art movement.",
@@ -714,7 +680,6 @@
         "availableUntil": "2024-06-20T23:59"
     },
     {
-        "_id": "A1202",
         "title": "Feminism in Art Research Paper",
         "course": "RS112",
         "description": "Write a research paper on the role of feminism in art.",
@@ -735,7 +700,6 @@
         "availableUntil": "2024-06-30T23:59"
     },
     {
-        "_id": "A1301",
         "title": "Christian Virtues Reflection Paper",
         "course": "RS113",
         "description": "Reflect on the significance of Christian virtues in personal life.",
@@ -756,7 +720,6 @@
         "availableUntil": "2024-06-15T23:59"
     },
     {
-        "_id": "A1302",
         "title": "Contemporary Ethical Dilemmas",
         "course": "RS113",
         "description": "Analyze contemporary ethical dilemmas from a Christian perspective.",
@@ -777,7 +740,6 @@
         "availableUntil": "2024-06-20T23:59"
     },
     {
-        "_id": "A1303",
         "title": "Faith in Ethical Decision Making",
         "course": "RS113",
         "description": "Discuss the role of faith in ethical decision-making processes.",
@@ -798,7 +760,6 @@
         "availableUntil": "2024-06-30T23:59"
     },
     {
-        "_id": "A1401",
         "title": "Apostolic Teachings Report",
         "course": "RS114",
         "description": "Research and report on the teachings of the apostles in the early church.",
@@ -819,7 +780,6 @@
         "availableUntil": "2024-06-25T23:59"
     },
     {
-        "_id": "A1402",
         "title": "New Testament Historical Essay",
         "course": "RS114",
         "description": "Write an essay on the historical context of the New Testament.",
@@ -840,7 +800,6 @@
         "availableUntil": "2024-06-15T23:59"
     },
     {
-        "_id": "A1403",
         "title": "Early Christian Doctrine Analysis",
         "course": "RS114",
         "description": "Analyze the development of early Christian doctrines.",
@@ -861,7 +820,6 @@
         "availableUntil": "2024-06-30T23:59"
     },
     {
-        "_id": "A1501",
         "title": "Leadership in Ministry Report",
         "course": "RS115",
         "description": "Explore leadership roles within ministry contexts.",
@@ -882,7 +840,6 @@
         "availableUntil": "2024-06-20T23:59"
     },
     {
-        "_id": "A1502",
         "title": "Servant Leadership Exercise",
         "course": "RS115",
         "description": "Engage in an exercise demonstrating servant leadership principles.",
@@ -903,7 +860,6 @@
         "availableUntil": "2024-06-15T23:59"
     },
     {
-        "_id": "A1503",
         "title": "Stewardship in Christian Communities",
         "course": "RS115",
         "description": "Discuss the role of stewardship in Christian communities.",
@@ -924,7 +880,6 @@
         "availableUntil": "2024-06-25T23:59"
     },
     {
-        "_id": "A1601",
         "title": "Sufi Poetry Analysis",
         "course": "RS116",
         "description": "Analyze the themes and significance of Sufi poetry.",
@@ -945,7 +900,6 @@
         "availableUntil": "2024-06-15T23:59"
     },
     {
-        "_id": "A1602",
         "title": "Divine Union Reflection",
         "course": "RS116",
         "description": "Reflect on the concept of divine union in mysticism.",
@@ -966,7 +920,6 @@
         "availableUntil": "2024-06-20T23:59"
     },
     {
-        "_id": "A1603",
         "title": "Mystical Practices Presentation",
         "course": "RS116",
         "description": "Prepare a presentation on various mystical practices.",
@@ -987,7 +940,6 @@
         "availableUntil": "2024-06-25T23:59"
     },
     {
-        "_id": "A1701",
         "title": "Moral Reasoning in Islam",
         "course": "RS117",
         "description": "Discuss the principles of moral reasoning in Islamic teachings.",
@@ -1008,7 +960,6 @@
         "availableUntil": "2024-06-15T23:59"
     },
     {
-        "_id": "A1702",
         "title": "Contemporary Ethical Dilemma Report",
         "course": "RS117",
         "description": "Analyze a contemporary ethical dilemma within an Islamic framework.",
@@ -1029,7 +980,6 @@
         "availableUntil": "2024-06-30T23:59"
     },
     {
-        "_id": "A1703",
         "title": "Role of Khidr in Ethical Teachings",
         "course": "RS117",
         "description": "Explore the role of Khidr in Islamic ethical teachings.",
@@ -1050,7 +1000,6 @@
         "availableUntil": "2024-06-25T23:59"
     },
     {
-        "_id": "A1801",
         "title": "Unseen World Symbolism",
         "course": "RS118",
         "description": "Analyze the symbolism associated with the unseen world in various traditions.",
@@ -1071,7 +1020,6 @@
         "availableUntil": "2024-06-15T23:59"
     },
     {
-        "_id": "A1802",
         "title": "Esoteric Interpretations Essay",
         "course": "RS118",
         "description": "Write an essay on esoteric interpretations of spiritual texts.",
@@ -1092,7 +1040,6 @@
         "availableUntil": "2024-06-20T23:59"
     },
     {
-        "_id": "A1803",
         "title": "Spiritual Realm Research Paper",
         "course": "RS118",
         "description": "Research the concept of the spiritual realm across various traditions.",
@@ -1113,7 +1060,6 @@
         "availableUntil": "2024-06-30T23:59"
     },
     {
-        "_id": "A1901",
         "title": "Ancient Chinese Water Management",
         "course": "RS119",
         "description": "Explore ancient techniques of water management in China.",
@@ -1134,7 +1080,6 @@
         "availableUntil": "2024-06-20T23:59"
     },
     {
-        "_id": "A1902",
         "title": "Yu the Great’s Environmental Strategy",
         "course": "RS119",
         "description": "Investigate Yu the Great’s environmental strategies in ancient China.",
@@ -1155,7 +1100,6 @@
         "availableUntil": "2024-06-25T23:59"
     },
     {
-        "_id": "A1903",
         "title": "Comparative Environmental Techniques",
         "course": "RS119",
         "description": "Compare ancient and modern environmental techniques.",
@@ -1176,7 +1120,6 @@
         "availableUntil": "2024-06-30T23:59"
     },
     {
-        "_id": "A2001",
         "title": "Leadership in Chinese Mythology",
         "course": "RS120",
         "description": "Examine the role of leadership in Chinese mythology.",
@@ -1197,7 +1140,6 @@
         "availableUntil": "2024-06-30T23:59"
     },
     {
-        "_id": "A2002",
         "title": "Ethical Governance Essay",
         "course": "RS120",
         "description": "Discuss the principles of ethical governance in the context of Chinese mythology.",
@@ -1218,7 +1160,6 @@
         "availableUntil": "2024-06-20T23:59"
     },
     {
-        "_id": "A2003",
         "title": "Yu the Great Leadership Case Study",
         "course": "RS120",
         "description": "Conduct a case study on the leadership of Yu the Great.",
@@ -1239,7 +1180,6 @@
         "availableUntil": "2024-06-25T23:59"
     },
     {
-        "_id": "A2101",
         "title": "Ancient Hydraulic Engineering Report",
         "course": "RS121",
         "description": "Research ancient hydraulic engineering techniques.",
@@ -1260,7 +1200,6 @@
         "availableUntil": "2024-06-30T23:59"
     },
     {
-        "_id": "A2102",
         "title": "Comparative Analysis of Ancient Irrigation",
         "course": "RS121",
         "description": "Compare various ancient irrigation systems and their effectiveness.",
@@ -1281,7 +1220,6 @@
         "availableUntil": "2024-06-20T23:59"
     },
     {
-        "_id": "A2103",
         "title": "Yu the Great's Flood Control System",
         "course": "RS121",
         "description": "Examine the flood control systems attributed to Yu the Great.",
